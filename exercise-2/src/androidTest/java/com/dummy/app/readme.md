@@ -64,18 +64,18 @@ This project provides an end-to-end (E2E) test framework for an Android applicat
     - **Answer**: Before the test starts, we need to set up the `ComposeTestRule` and ensure that the app is in the correct initial state, such as navigating to the login screen in this case.
     - **Code**:
         ```kotlin
-        @get:Rule
-        val composeTestRule = createComposeRule()
-
         @Before
         fun setUp() {
-            // Code to navigate to the initial state (e.g., login screen)
-            composeTestRule.setContent {
-                MyApp {
-                    // Initial state setup
-                }
-            }
-        }
+            loginRobot = LoginRobot(composeTestRule)
+            showcaseRobot = ShowcaseRobot(composeTestRule)
+            itemRobot = ItemRobot(composeTestRule)
+            cartRobot = CartRobot(composeTestRule)
+            addressRobot = AddressRobot(composeTestRule)
+            confirmPurchaseRobot = ConfirmPurchaseRobot(composeTestRule)
+
+            // init the state to login screen
+            loginRobot.setUpLoginScreen()
+        }    
         ```
 
 ### 4. Thoughts on the Bonus Point (5a.):
