@@ -1,4 +1,7 @@
-## Answers for 
+## Scenario 1
+This project provides an end-to-end (E2E) test framework for an Android application using Jetpack Compose. The framework uses the Robot Pattern to encapsulate interactions with different screens.
+
+## Scenario 2
 ### 1. When navigating to different screens in Scenario 1:
 - **Question**: How do you know the test went to the next screen? What if the network connection is slow?
 - **Answer**:
